@@ -1,0 +1,19 @@
+import hector.*
+import wollok.game.*
+import plantas.*
+
+program abc {
+	game.title("FarmVille")
+	game.height(10)
+	game.width(10)
+	game.ground("ground.png")
+	
+	game.addVisualCharacter(hector)
+	
+	keyboard.m().onPressDo{ hector.sembrarMaiz() }
+	keyboard.t().onPressDo{ hector.sembrarTrigo() }
+	keyboard.o().onPressDo{ hector.sembrarTomaco() }
+	keyboard.r().onPressDo{ hector.regar(game.getObjectsIn (hector.posicion()).get(1))}
+	
+	game.start()
+}
